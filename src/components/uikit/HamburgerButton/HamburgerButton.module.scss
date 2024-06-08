@@ -1,0 +1,45 @@
+@import '@/assets/styles/mixins';
+
+.MenuButton {
+  display: inline-flex;
+  margin-block: auto;
+  flex-direction: column;
+  outline: initial;
+  border: initial;
+  padding: initial;
+  background: none;
+  z-index: 10;
+  .Bar{
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1); 
+    &:nth-of-type(2) {
+      margin-inline-start: rem(4);
+      }
+  }
+
+
+  &:global(.active) {
+    .Bar:nth-of-type(1) {
+      transform: rotate(45deg) translate(9px, 9px);
+      width: rem(38);
+    }
+
+    .Bar:nth-of-type(2) {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .Bar:nth-of-type(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+      width: rem(38);
+    }
+  }
+}
+
+.Bar {
+  display: inline-flex;
+  width: rem(38);
+  height: rem(6);
+  margin-bottom: rem(5);
+  border-radius: rem(2);
+  background-color: #D9D9D9;
+}

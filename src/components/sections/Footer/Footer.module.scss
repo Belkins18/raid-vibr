@@ -1,0 +1,15 @@
+@import '@/assets/styles/mixins';
+
+.Footer{
+    position: relative;
+    width: 100%;
+    color: var(--color-white);
+    z-index: 2;
+    background-image: image-set(
+        '/src/assets/images/landing/footer/bg.avif' type('image/avif'),    
+        '/src/assets/images/landing/footer/bg.webp' type('image/webp'),    
+        '/src/assets/images/landing/footer/bg.png' type('image/png')   
+    );
+    background-position: center top;
+    background-repeat: no-repeat;
+}

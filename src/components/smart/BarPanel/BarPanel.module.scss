@@ -1,0 +1,66 @@
+@import '@/assets/styles/mixins';
+
+.BarPanel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  min-width: rem(320);
+  width: 100%;
+  max-height: 96dvh;
+  padding: clamp(rem(8), 2vw, rem(16));
+  background: linear-gradient(180deg, #141b2f 0%, #05080e 100%);
+  border: 1px solid rgba(4, 195, 255, 0.9);
+  border-bottom: initial;
+  clip-path: polygon(
+    100% 0%,
+    calc(0% + rem(20)) 0,
+    0 calc(0% + rem(20)),
+    0 100%,
+    100% 100%
+  );
+  transition: ease all 0.3s;
+  // margin: 0 0 -100vh 0;
+  &:before {
+    position: absolute;
+    content: '';
+    left: rem(9);
+    top: rem(-7);
+    width: rem(1);
+    height: rem(30);
+    transform: rotate(45deg);
+    border: 1px solid rgba(4, 195, 255, 0.9);
+  }
+}
+.BarPanelHeader {
+  padding-block: rem(10);
+  .Title {
+    font-size: rem(30);
+    text-align: center;
+  }
+}
+.PanelCloseButton {
+  position: absolute;
+  top: rem(10);
+  inset-inline-end: rem(20);
+  font-weight: 600;
+  font-size: rem(30);
+  text-align: center;
+  text-shadow: 0 0 rem(20) #04c3ffe5;
+}
+.BarPanelContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: auto;
+  gap: rem(40) rem(10);
+  margin-block-start: rem(40);
+  padding-block-end: rem(40);
+  @media screen and (min-width: 448px) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(rem(210), 1fr));
+    gap: rem(40) rem(10);
+  }
+}

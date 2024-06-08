@@ -1,0 +1,50 @@
+@import '@/assets/styles/mixins';
+
+$table-border-color: #ddd;
+// $table-header-bg: #f2f2f2;
+// $table-row-hover-bg: #f9f9f9;
+// $table-header-hover-bg: #e0e0e0;
+
+.table {
+  width: 100%;
+  max-width: rem(700);
+  border-collapse: collapse;
+  margin: 20px auto;
+
+  th,
+  td {
+    padding: 12px 15px;
+    border: 1px solid $table-border-color;
+    text-align: left;
+  }
+
+  thead {
+    // background-color: $table-header-bg;
+
+    th {
+      cursor: pointer;
+      user-select: none;
+        font-weight: 700;
+
+      &:hover {
+        // background-color: $table-header-hover-bg;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-of-type(even) {
+        // background-color: $table-row-hover-bg;
+      }
+
+      &:hover {
+        // background-color: lighten($table-row-hover-bg, 5%);
+      }
+    }
+  }
+}
+
+.sort-icon {
+  margin-left: 5px;
+}

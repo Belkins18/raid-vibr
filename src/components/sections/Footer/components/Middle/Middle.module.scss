@@ -1,0 +1,70 @@
+@import '@/assets/styles/mixins';
+
+.Middle {
+	font-weight: 300;
+	font-size: rem(18);
+	line-height: rem(26);
+	[variant="body"] {
+		text-shadow: 0 0 rem(20) #04c3ffe5;
+	}
+	.List {
+		display: flex;
+		flex-direction: column;
+		gap: rem(48);
+		.ListItem {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	:global(.container) {
+		background-color: #09101F;
+		padding-block: rem(26);
+	}
+}
+
+.SocialList {
+	display: flex;
+	gap: rem(18);
+	.SocialListItem {
+		.SocialListItemLink {
+			position: relative;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: rem(36);
+			height: rem(35);
+
+			.LinkBg {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+
+			.LinkIcon {
+				z-index: 1;
+				color: var(--color-white);
+
+			}
+		}
+		transition: 0.4s ease all;
+				&:hover {
+					filter: drop-shadow(0 0 1.1111111111rem rgba(4, 195, 255, 0.8980392157));
+				}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.Middle {
+		.List {
+			flex-direction: row;
+			justify-content: space-between;
+			gap: rem(48);
+			.ListItem {
+				display: flex;
+				justify-content: initial;
+				gap: clamp(rem(20), 2vw, rem(44));
+				
+			}
+		}
+	}
+}

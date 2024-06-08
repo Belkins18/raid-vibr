@@ -1,0 +1,14 @@
+
+@import '@/assets/styles/mixins';
+
+.RaidContainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  max-width: 100vw;
+
+    background-position: top center;
+    background-repeat: no-repeat;
+    // background-image: url(https://metawar.co.uk/wp-content/uploads/2022/05/hydra-rebalance.webp);
+}

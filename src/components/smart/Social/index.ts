@@ -1,0 +1,1 @@
+export { SocialIntroBg } from './SocialIntroBg'

@@ -1,0 +1,66 @@
+@import '@/assets/styles/mixins';
+
+.Navigate {
+  display: flex;
+  align-items: center;
+  &__List {
+    display: flex;
+    gap: rem(26);
+  }
+}
+
+.NavigateList {
+  &__Item {
+    position: relative;
+    display: inline-flex;
+    color: var(--color-white);
+
+    &:hover {
+      svg {
+        filter: drop-shadow(0 0 rem(20) #04c3ffe5);
+      }
+    }
+    svg {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition: 0.4s ease all;
+    }
+    > span {
+      position: relative;
+      text-shadow: 0 0 rem(20) #04c3ffe5;
+      z-index: 2;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 300;
+      font-size: rem(21);
+      width: rem(127);
+      height: rem(35);
+      color: var(--color-white);
+      z-index: 2;
+    }
+    button {
+      position: relative;
+      width: rem(46);
+      height: rem(34);
+      background: transparent;
+      border: initial;
+      overflow: hidden;
+      color: inherit;
+      svg {
+        position: absolute;
+        width: calc(100% + rem(20));
+        height: calc(100% + rem(20));
+        left: 50%;
+        top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+    }
+  }
+}

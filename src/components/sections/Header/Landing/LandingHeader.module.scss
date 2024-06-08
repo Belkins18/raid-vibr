@@ -1,0 +1,91 @@
+@import '@/assets/styles/mixins';
+
+.Header {
+  display: flex;
+  align-items: flex-end;
+  height: rem(115);
+  background-color: transparent;
+  &:global(.hasNavList) {
+    height: rem(120);
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.SideMenu {
+  display: flex;
+  flex-direction: column;
+  gap: rem(56);
+
+  .SideMenuNavigation {
+    ul {
+      flex-direction: column;
+      li {
+        svg {
+          width: 100%;
+        }
+        a {
+          width: rem(280);
+          height: rem(50);
+        }
+      }
+    }
+  }
+
+  main,
+  footer {
+    max-width: rem(390);
+  }
+
+  main {
+    :global(.container) {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  footer {
+    :global(.container) {
+      .SocialList {
+        display: flex;
+        justify-content: center;
+        inset-block-start: rem(70);
+        inset-inline-end: clamp(rem(10), 2vw, rem(30));
+        gap: rem(64);
+        .SocialListItem {
+          .SocialListItemLink {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: rem(64);
+            height: rem(62);
+
+            .LinkBg {
+              position: absolute;
+              left: 0;
+              top: 0;
+              width: 100%;
+              height: auto;
+            }
+
+            .LinkIcon {
+              z-index: 1;
+              color: var(--color-white);
+            }
+          }
+          transition: 0.4s ease all;
+          &:hover {
+            filter: drop-shadow(
+              0 0 1.1111111111rem rgba(4, 195, 255, 0.8980392157)
+            );
+          }
+        }
+      }
+    }
+  }
+}
