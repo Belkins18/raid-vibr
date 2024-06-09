@@ -1,43 +1,42 @@
 import { HTMLAttributes } from 'react'
 import classNames from 'classnames'
 
-import { formatNumber } from '@/utils'
-
-import { MDRender, TableComponent } from '@/components/smart'
+import { TableComponent } from '@/components/smart'
 import { Typography } from '@/components/uikit'
 
 import styles from './Hydra.page.module.scss'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const markdown = `
-| № | Name        | Key Used       | Damage
-|:-:|-------------|:---------:|:---------:|
-|1  | МирославUA | ✅✅✅ |${formatNumber(1176947895, 3)}
-|2  | Кіясік | ✅✅✅ |
-|3  | NikROman | ✅✅✅ | 
-|4  | Eriddicus | ✅✅✅ | 
-|5  | kanndai | ✅✅✅ |
-|6  | Крегул | ✅✅⭕️ |
-|7  | VLAD_XIII | ✅✅⭕️ |
-|8  | Crystal Castle | ✅⭕️⭕️ |
-|9  | lfvien | ✅⭕️⭕️ |
-|10 | DreadnoughtUA | ✅⭕️⭕️ |
-|11 | Radoran | ✅⭕️⭕️ |
-|12 | DrumBall | ✅⭕️⭕️ |
-|13 | Tambourin | ✅⭕️⭕️ |
-|14 | Ksondr | ✅⭕️⭕️ |
-|15 | dei.m | ✅⭕️⭕️ |
-|16 | PashaTKO | ✅⭕️⭕️ |
-|17 | Belkins_22 | ✅⭕️⭕️ |
-|18 | Просто в Кайф | ❌❌❌ |
-|19 | Oleg77713 | ⭕️⭕️⭕️ |
-|20 | Бітанга | ⭕️⭕️⭕️ |
-|21 | BEDbMAK_777 | ⭕️⭕️⭕️ |
-|22 | ArtemDE | ⭕️⭕️⭕️ |
-|23 | Юрец | ⭕️⭕️⭕️ |
-|24 | Vander7 | ⭕️⭕️⭕️ |
-|25 | Baks23 | ⭕️⭕️⭕️ |
-|26 | mbIk0lo | ⭕️⭕️⭕️ |
-|27 | Rigel_beta | ⭕️⭕️⭕️ |
+| № | Name           | Key Used| Damage
+|:-:|----------------|:-------:|:---------:|
+|1  | МирославUA     | ✅✅✅ |
+|2  | Крегул         | ✅✅✅ |
+|3  | NikROman       | ✅✅✅ |
+|4  | VLAD_XIII      | ✅✅✅ |
+|5  | Кіясік         | ✅✅✅ |
+|6  | Eriddicus      | ✅✅✅ |
+|7  | kanndai        | ✅✅✅ |
+|8  | Vander7        | ✅✅✅ |
+|9  | DrumBall       | ✅✅⭕️ |
+|10 | Ksondr         | ✅✅⭕️ |
+|11 | dei.m          | ✅✅⭕️ |
+|12 | Crystal Castle | ✅⭕️⭕️ |
+|13 | Radoran        | ✅⭕️⭕️ |
+|14 | DreadnoughtUA  | ✅⭕️⭕️ |
+|15 | lfvien         | ✅⭕️⭕️ |
+|16 | Belkins_22     | ✅⭕️⭕️ |
+|17 | Tambourin      | ✅⭕️⭕️ |
+|18 | PashaTKO       | ✅⭕️⭕️ |
+|19 | ArtemDE        | ✅⭕️⭕️ |
+|20 | Просто в Кайф  | ❌❌❌ |
+|21 | Oleg77713      | ⭕️⭕️⭕️ |
+|22 | Бітанга        | ⭕️⭕️⭕️ |
+|23 | BEDbMAK_777    | ⭕️⭕️⭕️ |
+|24 | Юрец           | ⭕️⭕️⭕️ |
+|25 | Baks23         | ⭕️⭕️⭕️ |
+|26 | mbIk0lo        | ⭕️⭕️⭕️ |
+|27 | Rigel_beta     | ⭕️⭕️⭕️ |
 `
 
 export enum EClanWarType {
@@ -63,33 +62,33 @@ const columns = [
 ]
 
 const data = [
-  { name: 'Crystal Castle', keyUsed: 1, sumDamage: 1 },
-  { name: 'lfvien', keyUsed: 1, sumDamage: 1 },
-  { name: 'DreadnoughtUA', keyUsed: 1, sumDamage: 1 },
-  { name: 'Radoran', keyUsed: 1, sumDamage: 1 },
-  { name: 'МирославUA', keyUsed: 3, sumDamage: 1 },
-  { name: 'Крегул', keyUsed: 2, sumDamage: 1 },
-  { name: 'DrumBall', keyUsed: 3, sumDamage: 1 },
-  { name: 'Просто в Кайф', keyUsed: 3, sumDamage: 1 },
-  { name: 'Oleg77713', keyUsed: 3, sumDamage: 1 },
-  { name: 'Бітанга', keyUsed: 3, sumDamage: 1 },
-  { name: 'Кіясік', keyUsed: 3, sumDamage: 1 },
-  { name: 'NikROman', keyUsed: 3, sumDamage: 1 },
-  { name: 'BEDbMAK_777', keyUsed: 3, sumDamage: 1 },
-  { name: 'Tambourin', keyUsed: 3, sumDamage: 1 },
-  { name: 'ArtemDE', keyUsed: 3, sumDamage: 1 },
-  { name: 'Юрец', keyUsed: 3, sumDamage: 1 },
-  { name: 'Ksondr', keyUsed: 3, sumDamage: 1 },
-  { name: 'Eriddicus', keyUsed: 3, sumDamage: 1 },
-  { name: 'Vander7', keyUsed: 3, sumDamage: 1 },
-  { name: 'dei.m', keyUsed: 3, sumDamage: 1 },
-  { name: 'kanndai', keyUsed: 3, sumDamage: 1 },
-  { name: 'PashaTKO', keyUsed: 3, sumDamage: 1 },
-  { name: 'Baks23', keyUsed: 3, sumDamage: 1 },
-  { name: 'Belkins_22', keyUsed: 3, sumDamage: 1 },
-  { name: 'mbIk0lo', keyUsed: 3, sumDamage: 1 },
-  { name: 'Rigel_beta', keyUsed: 2, sumDamage: 1 },
-  { name: 'VLAD_XIII', keyUsed: 1, sumDamage: 1 },
+  { name: 'МирославUA', keyUsed: '✅✅✅', sumDamage: 1 },
+  { name: 'Крегул', keyUsed: '✅✅✅', sumDamage: 1 },
+  { name: 'NikROman', keyUsed: '✅✅✅', sumDamage: 1 },
+  { name: 'VLAD_XIII', keyUsed: '✅✅✅', sumDamage: 1 },
+  { name: 'Кіясік', keyUsed: '✅✅✅', sumDamage: 1 },
+  { name: 'Eriddicus', keyUsed: '✅✅✅', sumDamage: 1 },
+  { name: 'kanndai', keyUsed: '✅✅✅', sumDamage: 1 },
+  { name: 'Vander7', keyUsed: '✅✅✅', sumDamage: 1 },
+  { name: 'DrumBall', keyUsed: '✅✅⭕️', sumDamage: 1 },
+  { name: 'Ksondr', keyUsed: '✅✅⭕️', sumDamage: 1 },
+  { name: 'dei.m', keyUsed: '✅✅⭕️', sumDamage: 1 },
+  { name: 'Crystal Castle', keyUsed: '✅⭕️⭕️', sumDamage: 1 },
+  { name: 'Radoran', keyUsed: '✅⭕️⭕️', sumDamage: 1 },
+  { name: 'DreadnoughtUA', keyUsed: '✅⭕️⭕️', sumDamage: 1 },
+  { name: 'lfvien', keyUsed: '✅⭕️⭕️', sumDamage: 1 },
+  { name: 'Belkins_22', keyUsed: '✅⭕️⭕️', sumDamage: 1 },
+  { name: 'Tambourin', keyUsed: '✅⭕️⭕️', sumDamage: 1 },
+  { name: 'PashaTKO', keyUsed: '✅⭕️⭕️', sumDamage: 1 },
+  { name: 'ArtemDE', keyUsed: '✅⭕️⭕️', sumDamage: 1 },
+  { name: 'Просто в Кайф', keyUsed: '❌❌❌', sumDamage: 1 },
+  { name: 'Oleg77713', keyUsed: '⭕️⭕️⭕️', sumDamage: 1 },
+  { name: 'Бітанга', keyUsed: '⭕️⭕️⭕️', sumDamage: 1 },
+  { name: 'BEDbMAK_777', keyUsed: '⭕️⭕️⭕️', sumDamage: 1 },
+  { name: 'Юрец', keyUsed: '⭕️⭕️⭕️', sumDamage: 1 },
+  { name: 'Baks23', keyUsed: '⭕️⭕️⭕️', sumDamage: 1 },
+  { name: 'mbIk0lo', keyUsed: '⭕️⭕️⭕️', sumDamage: 1 },
+  { name: 'Rigel_beta', keyUsed: '⭕️⭕️⭕️', sumDamage: 1 },
 ]
 
 interface IHydraPageProps extends HTMLAttributes<HTMLDivElement> {}
@@ -100,12 +99,13 @@ export const HydraPage = ({ className, ...rest }: IHydraPageProps) => {
       <section>
         <div className="container">
           <Typography tag={'h3'} className={styles.Title}>
-            Hydra {PENALTY_CW_POINTS_BY_KEY}
-            <span>22.05-05.06</span>
+            Hydra
+            <span>05.06-19.06</span>
+            <span>Week 1 / 2</span>
           </Typography>
 
           <TableComponent data={data} columns={columns} />
-          <MDRender markdown={markdown} />
+          {/* <MDRender markdown={markdown} /> */}
         </div>
       </section>
     </div>

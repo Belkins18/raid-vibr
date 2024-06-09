@@ -4,18 +4,6 @@
     section {
         padding-block: rem(40);
     }
-
-    .Title {
-        span {
-            display: block;
-            font-size: rem(16);
-        }
-
-        ~ .List {
-            margin-block-start: rem(32);
-        }
-    }
-
     .List {
         display: flex;
         flex-direction: column;

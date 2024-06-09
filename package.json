@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "env NODE_ENV=development vite --mode testnet",
+    "dev": "env NODE_ENV=development vite --mode testnet --host",
     "build": "tsc && vite build",
     "build:dev:testnet": "tsc && env NODE_ENV=development vite build --mode testnet",
     "build:dev:mainnet": "tsc && env NODE_ENV=development vite build --mode mainnet",
