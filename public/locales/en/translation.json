@@ -18,7 +18,56 @@
 				"description": "<p>Everyone's situation is unique, and we respect our members. Therefore, we say first and foremost, if you have issues with free time, let us know.</p><p>And in general, anyone who feels they might not have time to play, write to us. We have never ignored anyone.</p>"
 			}
 		],
+		"mandatoryRules": [
+			{
+				"title": "Activity",
+				"description": [
+					{
+						"rule": "If you realize that you won't be able to play in the near future, you must notify the clan leader or their deputies via Telegram/game chat."
+					},
+					{
+						"rule": "If a player disappears for more than 7 days without notice, they will be expelled from the clan."
+					},
+					{
+						"rule": "If a player misses the \"Clan Tournament\" without notice, they will be expelled from the clan."
+					}
+				]
+			},
+			{
+				"title": "Clan Tournament",
+				"description": [
+					{
+						"rule": "All players, except those absent according to point 1.1, must meet a minimum point requirement. The minimum points for the tournament are always specified in the clan description within the game."
+					},
+					{
+						"rule": "If a player fails to meet the point requirement, they will be punished."
+					},
+					{
+						"title": "Punishments",
+						"description": [
+							{
+								"rule": "A shortfall from the minimum within 50k points results in a 'warning'."
+							},
+							{
+								"rule": "A shortfall from the minimum exceeding 50k points is considered tournament neglect and results in expulsion from the clan."
+							}
+						]
+					},
+					{
+						"title": "Rehabilitation",
+						"description": [
+							{
+								"rule": "If a player earns twice the minimum points in the next clan tournament, the warning is lifted; otherwise, they will be expelled from the clan."
+							}						]
+					}
+				]
+			}
+		],
 		"navList": [
+			{
+				"title": "Home",
+				"link": "/"
+			},
 			{
 				"title": "Hydra",
 				"link": "hydra"

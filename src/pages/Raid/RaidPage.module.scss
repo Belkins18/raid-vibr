@@ -4,16 +4,35 @@
     section {
         padding-block: rem(40);
     }
+
+    * + .List {
+        margin-block-start: rem(32);
+    }
+
     .List {
         display: flex;
         flex-direction: column;
         gap: rem(24);
         counter-reset: item;
         .ListItem {
+            position: relative;
+            padding-inline-start: rem(24);
             &:before { 
                 content: counters(item, ".") " "; 
                 counter-increment: item;
                 position: absolute;
+                inset-inline-start: 0;
+            }
+
+            ul {
+                li { position: relative;
+                    padding-inline-start: rem(24);
+                    ul {
+                        li { position: relative;
+                            padding-inline-start: rem(32);
+                        }
+                    }
+                }
             }
         }
 
@@ -22,8 +41,8 @@
             margin-block-start: rem(8);
         }
 
+      
         h5 {
-            padding-inline-start: rem(32);
             font-size: rem(24);
             margin-block-end: rem(4);
         }

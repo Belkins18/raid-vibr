@@ -1,4 +1,5 @@
 import { HTMLAttributes } from 'react'
+import WebApp from '@twa-dev/sdk'
 import classNames from 'classnames'
 
 import { TableComponent } from '@/components/smart'
@@ -104,6 +105,11 @@ export const HydraPage = ({ className, ...rest }: IHydraPageProps) => {
             <span>Week 1 / 2</span>
           </Typography>
 
+          <button
+            onClick={() => WebApp.showAlert(`Hello World! Current count is`)}
+          >
+            Show Alert
+          </button>
           <TableComponent data={data} columns={columns} />
           {/* <MDRender markdown={markdown} /> */}
         </div>
