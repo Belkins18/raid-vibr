@@ -19,7 +19,7 @@
 
   &:global(.isHydra) {
     background: fixed
-      image-set('src/assets/images/hydra/bg.jpg' type('image/jpg')) no-repeat
+      image-set('./src/assets/images/hydra/bg.jpg' type('image/jpg')) no-repeat
       top center / cover;
   }
 }
