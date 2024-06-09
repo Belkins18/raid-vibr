@@ -29,7 +29,7 @@ export const RaidPage = ({ ...rest }: IRaidPageProps) => {
       <section>
         <div className="container">
           <Typography tag={'h3'} className={styles.Title}>
-            clan values and chat rules
+            {t('clanValuesTitle')}
           </Typography>
 
           <ul className={styles.List}>
@@ -55,7 +55,7 @@ export const RaidPage = ({ ...rest }: IRaidPageProps) => {
       <section>
         <div className="container">
           <Typography tag={'h3'} className={styles.Title}>
-            Mandatory clan rules.
+            {t('mandatoryTitle')}
           </Typography>
 
           <ul className={styles.List}>

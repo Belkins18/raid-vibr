@@ -1,5 +1,6 @@
 {
 	"raid": {
+		"clanValuesTitle": "clan values and chat rules",
 		"clanValuesList": [
 			{
 				"title": "Respect is foremost.",
@@ -18,6 +19,7 @@
 				"description": "<p>Everyone's situation is unique, and we respect our members. Therefore, we say first and foremost, if you have issues with free time, let us know.</p><p>And in general, anyone who feels they might not have time to play, write to us. We have never ignored anyone.</p>"
 			}
 		],
+		"mandatoryTitle": "Mandatory clan rules",
 		"mandatoryRules": [
 			{
 				"title": "Activity",
