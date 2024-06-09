@@ -1,11 +1,8 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import { HTMLAttributes, ReactNode } from 'react'
-import { Link } from 'react-router-dom'
+import { HTMLAttributes, ReactNode, useEffect, useState } from 'react'
 import classNames from 'classnames'
 
-import { SocialList } from '@/data'
-import { Brand, EPictureExt, Navigate, SocialIntroBg } from '@/components/smart'
-import { HamburgerButton, Icon, SideMenu } from '@/components/uikit'
+import { Brand, EPictureExt, Navigate } from '@/components/smart'
+import { HamburgerButton, SideMenu } from '@/components/uikit'
 
 import styles from './LandingHeader.module.scss'
 import { TParams } from '@/types'
@@ -27,9 +24,26 @@ export const LandingHeader = ({
   brand,
   ...rest
 }: ILandingHeaderProps) => {
+  const [scrollPosition, setScrollPosition] = useState<number>(0)
+
+  const handleScroll = () => {
+    const position = window.pageYOffset
+    setScrollPosition(position)
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <header
-      className={classNames(styles.Header, className, params)}
+      className={classNames(styles.Header, className, params, {
+        onScroll: scrollPosition > 10,
+      })}
       {...{ ...rest }}
     >
       <div className={classNames('container', styles.Header__container)}>
@@ -63,13 +77,13 @@ export const LandingHeader = ({
                   <div className="container">
                     <Navigate
                       navList={navList}
-                      isCustomView={<></>}
+                      // isCustomView={<></>}
                       className={styles.SideMenuNavigation}
                     />
                   </div>
                 </main>
 
-                <footer>
+                {/* <footer>
                   <div className="container">
                     <ul className={styles.SocialList}>
                       {SocialList.map((item, index) => {
@@ -95,7 +109,7 @@ export const LandingHeader = ({
                       })}
                     </ul>
                   </div>
-                </footer>
+                </footer> */}
               </div>
             </>
           }

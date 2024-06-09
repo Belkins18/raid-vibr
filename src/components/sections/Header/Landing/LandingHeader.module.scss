@@ -3,10 +3,14 @@
 .Header {
   display: flex;
   align-items: flex-end;
-  height: rem(115);
+  // height: rem(115);
   background-color: transparent;
   &:global(.hasNavList) {
     height: rem(120);
+  }
+  &:global(.onScroll) {
+    background-color: rgba(var(--color-black-rgb), 0.9);
+    border-color: rgba(var(--color-cyan-rgb), 1);
   }
 
   &__container {
@@ -19,6 +23,7 @@
 .SideMenu {
   display: flex;
   flex-direction: column;
+  margin-block-start: rem(40);
   gap: rem(56);
 
   .SideMenuNavigation {
@@ -27,9 +32,11 @@
       li {
         svg {
           width: 100%;
+          height: 100%;
         }
         a {
-          width: rem(280);
+          font-size: rem(32);
+          width: rem(181);
           height: rem(50);
         }
       }
@@ -38,6 +45,7 @@
 
   main,
   footer {
+    margin-inline: auto;
     max-width: rem(390);
   }
 

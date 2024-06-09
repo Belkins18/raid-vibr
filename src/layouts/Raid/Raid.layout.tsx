@@ -1,13 +1,16 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useMatch } from 'react-router-dom'
 import { useContainerQuery } from 'react-container-query'
 import { useTranslation } from 'react-i18next'
 import classNames from 'classnames'
 
+import i18n, { EDirection, ELangSupport } from '@/i18n'
 import { MenuProvider } from '@/providers/MenuProvider'
+
 import { LandingHeader } from '@/components/sections'
 import { Brand, EPictureExt } from '@/components/smart'
 
 import styles from './Raid.layout.module.scss'
+import { useEffect } from 'react'
 
 const query = {
   isMobile: {
@@ -27,6 +30,8 @@ const query = {
 }
 
 export const RaidLayout = () => {
+  const isHydra = useMatch('/hydra')
+
   const { t: tNavigate } = useTranslation('translation', {
     keyPrefix: 'raid',
   })
@@ -42,13 +47,21 @@ export const RaidLayout = () => {
     link?: string
   }[]
 
+  useEffect(() => {
+    document.body.dir =
+      i18n.language === ELangSupport.ar ? EDirection.rtl : EDirection.ltr
+  }, [])
+
   return (
     <MenuProvider>
       <div
-        className={classNames(styles.RaidContainer, params)}
+        className={classNames(styles.RaidContainer, params, {
+          isHydra: isHydra,
+        })}
         ref={containerRef}
       >
         <LandingHeader
+          className={styles.Header}
           params={params}
           navList={navList}
           brand={

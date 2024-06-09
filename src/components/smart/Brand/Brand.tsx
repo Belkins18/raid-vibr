@@ -1,6 +1,7 @@
-import classNames from 'classnames'
 import { HTMLAttributes } from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import classNames from 'classnames'
 
 import { EPictureExt, Picture } from '@/components/smart'
 
@@ -26,11 +27,13 @@ export const Brand = ({
   })
 
   return (
-    <div className={classNames(styles.Brand, className)} {...{ ...rest }}>
-      <div className={styles.Brand__icon}>
-        <Picture img={img} />
+    <Link to="/">
+      <div className={classNames(styles.Brand, className)} {...{ ...rest }}>
+        <div className={styles.Brand__icon}>
+          <Picture img={img} />
+        </div>
+        <div className={styles.Brand__slogan}>{text ? text : t('text')}</div>
       </div>
-      <div className={styles.Brand__slogan}>{text ? text : t('text')}</div>
-    </div>
+    </Link>
   )
 }

@@ -9,7 +9,7 @@ export const NavigateLinkSvg = () => {
     >
       <path
         d="M0.71582 34.045H117.541L125.98 24.7113V0.909668H6.22438L0.71582 7.00252V34.045Z"
-        fill="url(#paint0_linear_52_698)"
+        // fill="url(#paint0_linear_52_698)"
       />
       <path
         d="M72.5869 34.045H117.54L125.979 24.7113V0.909668H118.404"

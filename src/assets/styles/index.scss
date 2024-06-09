@@ -11,13 +11,14 @@
 :root {
   // --font-family-heading: 'Andromedaeclipsis', sans-serif;
   --font-family-heading: 'Alumni Sans Pinstripe', sans-serif;
-  --font-family-main: 'Bai Jamjuree', sans-serif;
+  --font-family-main: 'Alumni Sans Pinstripe', sans-serif;
   --font-size: 18px;
 
   --color-white: #fff;
   --color-black: #000;
   --color-blue-light: #b9f2ff;
   --color-cyan: #87E9FF;
+  --color-black-rgb: 0, 0, 0;
   --color-cyan-rgb: 135, 233, 255;
   --color-grey: #d9d9d9;
 }
@@ -303,5 +304,53 @@ button {
       pointer-events: none;
       animation: animateDash 10s linear forwards infinite;
     }
+  }
+}
+
+$table-border-color: #ddd;
+
+table {
+  width: 100%;
+  max-width: rem(700);
+  border-collapse: collapse;
+  margin: 20px auto;
+  letter-spacing: 1.1px;
+
+  th,
+  td {
+    padding: 8px 10px;
+    border: 1px solid $table-border-color;
+    text-align: left;
+  }
+
+  thead {
+    // background-color: $table-header-bg;
+
+    th {
+      cursor: pointer;
+      user-select: none;
+      font-weight: 700;
+
+
+      &:hover {
+        // background-color: $table-header-hover-bg;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-of-type(even) {
+        // background-color: $table-row-hover-bg;
+      }
+
+      &:hover {
+        // background-color: lighten($table-row-hover-bg, 5%);
+      }
+    }
+  }
+
+  .sort-icon {
+    margin-left: 5px;
   }
 }

@@ -21,7 +21,7 @@
 		"navList": [
 			{
 				"title": "Hydra",
-				"href": "hydra"
+				"link": "hydra"
 			}
 		],
 		"components": {

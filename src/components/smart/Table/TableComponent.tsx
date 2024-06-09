@@ -2,8 +2,6 @@
 import { HTMLAttributes, useMemo, useState } from 'react'
 import { formatNumber } from '@/utils'
 
-import styles from './TableComponent.module.scss'
-
 export type Column = {
   header: string
   accessor: string
@@ -47,7 +45,7 @@ export const TableComponent = ({ data, columns }: ITableComponentProps) => {
   }
 
   return (
-    <table className={styles.table}>
+    <table>
       <thead>
         <tr>
           <th>№</th>
@@ -58,7 +56,7 @@ export const TableComponent = ({ data, columns }: ITableComponentProps) => {
             >
               {column.header}
               {sortConfig?.key === column.accessor ? (
-                <span className={styles.sortIcon}>
+                <span>
                   {sortConfig.direction === 'ascending' ? ' ▲' : ' ▼'}
                 </span>
               ) : null}

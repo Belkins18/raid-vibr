@@ -1,8 +1,9 @@
+import fs from "fs"
 import path from "path"
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import autoprefixer from 'autoprefixer'
-import { nodeResolve } from '@rollup/plugin-node-resolve'
+// import { nodeResolve } from '@rollup/plugin-node-resolve'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -19,24 +20,16 @@ export default defineConfig({
      "@": path.resolve(__dirname, "./src"),
     },
   },
-  build: {
-    rollupOptions: {
-      plugins: [nodeResolve()],
-      output: {
-        dir: 'dist',
-        format: 'esm',
-        manualChunks: (id) => {
-          // if (id.includes('commonjsHelpers')) return 'commonjsHelpers'
-          // if (id.includes('apexcharts')) return 'charts'
-          if (id.includes('node_modules/lodash')) return 'lodash'
-          if (id.includes('node_modules/swiper')) return 'swiper'
-          if (id.includes('node_modules/@wagmi')) return '@wagmi'
-          if (id.includes('node_modules/@walletconnect'))
-            return '@walletconnect'
-          if (id.includes('node_modules/@web3modal')) return '@web3modal'
-        },
-        minifyInternalExports: true
-      },
+  server: {
+    port: 443,
+    host: "0.0.0.0",
+    hmr: {
+        host: 'tg-mini-app.local',
+        port: 443,
+    },
+    https: {
+      key: fs.readFileSync('./.cert/localhost-key.pem'),
+      cert: fs.readFileSync('./.cert/localhost.pem'),
     },
   },
 })

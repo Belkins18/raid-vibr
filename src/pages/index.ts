@@ -1,1 +1,6 @@
+export { HomePage } from './Home'
+export { HydraPage } from './Hydra'
+export { LoginPage } from './Login'
+export { NotFoundPage } from './NotFound'
+export { RegisterPage } from './Register'
 export { RaidPage } from './Raid'

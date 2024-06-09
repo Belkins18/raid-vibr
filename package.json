@@ -32,11 +32,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^14.1.0",
+    "react-markdown": "^9.0.1",
     "react-router-dom": "^6.22.3",
+    "remark-gfm": "^4.0.0",
     "usehooks-ts": "^3.1.0"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node-sass": "^4.11.7",
     "@types/react": "^18.2.64",
     "@types/react-dom": "^18.2.21",

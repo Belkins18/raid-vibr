@@ -152,12 +152,13 @@ a {
 }
 :root {
   --font-family-heading: 'Alumni Sans Pinstripe', sans-serif;
-  --font-family-main: 'Bai Jamjuree', sans-serif;
+  --font-family-main: 'Alumni Sans Pinstripe', sans-serif;
   --font-size: 18px;
   --color-white: #fff;
   --color-black: #000;
   --color-blue-light: #b9f2ff;
   --color-cyan: #87e9ff;
+  --color-black-rgb: 0, 0, 0;
   --color-cyan-rgb: 135, 233, 255;
   --color-grey: #d9d9d9;
 }
@@ -424,4 +425,27 @@ button.loading svg {
   stroke-dashoffset: 100;
   pointer-events: none;
   animation: animateDash 10s linear forwards infinite;
+}
+table {
+  width: 100%;
+  max-width: 38.8888888889rem;
+  border-collapse: collapse;
+  margin: 20px auto;
+  letter-spacing: 1.1px;
+}
+table th,
+table td {
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+table thead th {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  font-weight: 700;
+}
+table .sort-icon {
+  margin-left: 5px;
 }

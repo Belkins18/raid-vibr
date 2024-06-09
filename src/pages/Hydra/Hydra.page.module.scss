@@ -1,0 +1,20 @@
+@import '@/assets/styles/mixins';
+
+.HydraPage {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(var(--color-black-rgb), 0.8);
+
+    // background-position: top center;
+    // background-attachment: fixed;
+    // background-image: image-set(
+    //     'src/assets/images/hydra/bg.jpg' type('image/jpg')
+    //   );
+    // background-repeat: no-repeat;
+    // background-color: black;
+    //   background-size: auto;
+
+
+}

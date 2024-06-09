@@ -1,6 +1,10 @@
 @import '@/assets/styles/mixins';
 
 .RaidPage {
+    section {
+        padding-block: rem(40);
+    }
+
     .Title {
         span {
             display: block;
@@ -33,6 +37,7 @@
         h5 {
             padding-inline-start: rem(32);
             font-size: rem(24);
+            margin-block-end: rem(4);
         }
     }
 }
