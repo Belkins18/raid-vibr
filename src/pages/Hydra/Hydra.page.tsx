@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { HTMLAttributes } from 'react'
 import WebApp from '@twa-dev/sdk'
 import classNames from 'classnames'
@@ -7,6 +8,7 @@ import { Typography } from '@/components/uikit'
 
 import styles from './Hydra.page.module.scss'
 
+// @ts-ignore
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 const markdown = `
 | № | Name           | Key Used| Damage
