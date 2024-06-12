@@ -377,37 +377,6 @@ button[disabled] {
   font-size: 0.6666666667rem;
   color: #f00250;
 }
-input {
-  width: 100%;
-  height: clamp(2.2222222222rem, 3vw, 2.7777777778rem);
-  border: 1px solid;
-  font-size: 0.8888888889rem;
-  font-weight: 600;
-  outline: none;
-  -webkit-padding-start: 1.1111111111rem;
-  padding-inline-start: 1.1111111111rem;
-  -webkit-padding-end: 1rem;
-  padding-inline-end: 1rem;
-  background: linear-gradient(180deg, #141b2f 0%, #05080e 100%);
-  border: 1px solid rgba(4, 195, 255, 0.9);
-  color: var(--color-white);
-  transition: 0.4s ease all;
-}
-input::-moz-placeholder {
-  color: var(--color-grey);
-}
-input::placeholder {
-  color: var(--color-grey);
-}
-input:focus {
-  border-color: var(--color-cyan);
-}
-input + * {
-  -webkit-margin-before: 0.2222222222rem;
-  margin-block-start: 0.2222222222rem;
-  font-size: 0.6666666667rem;
-  color: #f00250;
-}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -427,8 +396,6 @@ button.loading svg {
   animation: animateDash 10s linear forwards infinite;
 }
 table {
-  width: 100%;
-  max-width: 38.8888888889rem;
   border-collapse: collapse;
   margin: 20px auto;
   letter-spacing: 1.1px;

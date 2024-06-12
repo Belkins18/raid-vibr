@@ -251,34 +251,34 @@ button {
   }
 }
 
-input {
-  width: 100%;
-  height: clamp(rem(40), 3vw, rem(50));
+// input {
+//   width: 100%;
+//   height: clamp(rem(40), 3vw, rem(50));
 
-  border: 1px solid;
-  font-size: rem(16);
-  font-weight: 600;
-  outline: none;
-  padding-inline-start: rem(20);
-  padding-inline-end: rem(18);
+//   border: 1px solid;
+//   font-size: rem(16);
+//   font-weight: 600;
+//   outline: none;
+//   padding-inline-start: rem(20);
+//   padding-inline-end: rem(18);
 
-  background: linear-gradient(180deg, #141b2f 0%, #05080e 100%);
-  border: 1px solid rgba(4, 195, 255, 0.9);
-  color: var(--color-white);
-  transition: 0.4s ease all;
-  &::placeholder {
-    color: var(--color-grey);
-  }
-  &:focus {
-    border-color: var(--color-cyan);
-  }
+//   background: linear-gradient(180deg, #141b2f 0%, #05080e 100%);
+//   border: 1px solid rgba(4, 195, 255, 0.9);
+//   color: var(--color-white);
+//   transition: 0.4s ease all;
+//   &::placeholder {
+//     color: var(--color-grey);
+//   }
+//   &:focus {
+//     border-color: var(--color-cyan);
+//   }
 
-  + * {
-    margin-block-start: rem(4);
-    font-size: rem(12);
-    color: #f00250;
-  }
-}
+//   + * {
+//     margin-block-start: rem(4);
+//     font-size: rem(12);
+//     color: #f00250;
+//   }
+// }
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
@@ -310,8 +310,6 @@ button {
 $table-border-color: #ddd;
 
 table {
-  width: 100%;
-  max-width: rem(700);
   border-collapse: collapse;
   margin: 20px auto;
   letter-spacing: 1.1px;
