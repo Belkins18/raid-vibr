@@ -42,450 +42,361 @@ const jsonData: Omit<ITable, 'index'>[] = [
   {
     tgAlias: 'Boichun',
     nickname: 'DreadnoughtUA',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 1744546469,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 1744546469,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: '@Ifvien',
     nickname: 'lfvien',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 1644757886,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 1644757886,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Паша',
     nickname: 'PashaTKO',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 1536258421,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 1536258421,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'al glass',
     nickname: 'Crystal Castle',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 1530479225,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 1530479225,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Анатолій',
     nickname: 'Radoran',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 1152184621,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 1152184621,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Мирослав',
     nickname: 'МирославUA',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 1041638903,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 1041638903,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Виталик Бакс',
     nickname: 'Baks23',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 697591793,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 697591793,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: '@mbIk0lo',
     nickname: 'mbIk0lo',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 447312145,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 447312145,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Богдан',
     nickname: 'DrumBall',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 393976131,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 393976131,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: '@belkins_22',
     nickname: 'Belkins_22',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 391959491,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 391959491,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Андрій',
     nickname: 'Крегул',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 280941704,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 280941704,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: '@Tambourin',
     nickname: 'Tambourin',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 226600000,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 226600000,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Ksondr',
     nickname: 'Ksondr',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 221481553,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 221481553,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Roman',
     nickname: 'NikROman',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 184324369,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 184324369,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Oleg',
     nickname: 'Oleg77713',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 183760000,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 183760000,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Міша',
     nickname: 'Бітанга',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 172700000,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 172700000,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Ihor',
     nickname: 'Rigel_beta',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 154764901,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 154764901,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Влад',
     nickname: 'VLAD_XIII',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 147223134,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 147223134,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Kiyasik',
     nickname: 'Кіясік',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 143090000,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 143090000,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Oleksandr',
     nickname: 'BEDbMAK_777',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 2,
-      w1_damage: 136175610,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 2,
+    w1_damage: 136175610,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: '@ArtemSolokha',
     nickname: 'ArtemDE',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 121050000,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 121050000,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'юра',
     nickname: 'Юрец',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 2,
-      w1_damage: 76730000,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 2,
+    w1_damage: 76730000,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Oleksandr',
     nickname: 'Eriddicus',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 72370000,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 72370000,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: '@Vander7',
     nickname: 'Vander7',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 53330000,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 53330000,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: '@Mikaela_pak',
     nickname: 'dei.m',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 47150000,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 47150000,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'kanndai',
     nickname: 'kanndai',
-    week1: {
-      w1_isOptional: null,
-      w1_keyUsed: 3,
-      w1_damage: 17890000,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+
+    w1_isOptional: null,
+    w1_keyUsed: 3,
+    w1_damage: 17890000,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: 'Просто в Кайф',
     nickname: 'Просто в Кайф',
-    week1: {
-      w1_isOptional: true,
-      w1_keyUsed: 0,
-      w1_damage: 0,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+    w1_isOptional: true,
+    w1_keyUsed: 0,
+    w1_damage: 0,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
   {
     tgAlias: '',
     nickname: 'AleKsBeN',
-    week1: {
-      w1_isOptional: true,
-      w1_keyUsed: 0,
-      w1_damage: 0,
-      w1_penalty: 0,
-    },
-    week2: {
-      w2_isOptional: null,
-      w2_keyUsed: 0,
-      w2_damage: 0,
-      w2_penalty: 0,
-    },
+    w1_isOptional: true,
+    w1_keyUsed: 0,
+    w1_damage: 0,
+    w1_penalty: 0,
+    w2_isOptional: null,
+    w2_keyUsed: 0,
+    w2_damage: 0,
+    w2_penalty: 0,
   },
 ]
 
@@ -493,18 +404,14 @@ interface ITable {
   index: number
   tgAlias: string
   nickname: string
-  week1: {
-    w1_isOptional: boolean | null
-    w1_keyUsed: number
-    w1_damage: number
-    w1_penalty: number
-  }
-  week2: {
-    w2_isOptional: boolean | null
-    w2_keyUsed: number
-    w2_damage: number
-    w2_penalty: number
-  }
+  w1_isOptional: boolean | null
+  w1_keyUsed: number
+  w1_damage: number
+  w1_penalty: number
+  w2_isOptional: boolean | null
+  w2_keyUsed: number
+  w2_damage: number
+  w2_penalty: number
 }
 
 const defaultColumns: ColumnDef<ITable>[] = [
@@ -552,8 +459,8 @@ const defaultColumns: ColumnDef<ITable>[] = [
         accessorKey: 'w1_keyUsed',
         header: () => <span>Key Used</span>,
         cell: (props) => {
-          if (props.row.original.week1.w1_isOptional) {
-            switch (props.row.original.week1.w1_keyUsed) {
+          if (props.row.original.w1_isOptional) {
+            switch (props.row.original.w1_keyUsed) {
               case 0:
                 return '❌❌❌'
               case 1:
@@ -567,7 +474,7 @@ const defaultColumns: ColumnDef<ITable>[] = [
             }
           }
 
-          switch (props.row.original.week1.w1_keyUsed) {
+          switch (props.row.original.w1_keyUsed) {
             case 0:
               return '⭕️⭕️⭕️'
             case 1:
@@ -586,7 +493,7 @@ const defaultColumns: ColumnDef<ITable>[] = [
         accessorKey: 'w1_damage',
         header: () => <span>Damage</span>,
         cell: (props) => {
-          return formatNumber(props.row.original.week1.w1_damage, 2)
+          return formatNumber(props.row.original.w1_damage, 2)
         },
         footer: (props) => props.column.id,
       },
@@ -594,12 +501,12 @@ const defaultColumns: ColumnDef<ITable>[] = [
         accessorKey: 'w1_penalty',
         header: () => <span>Penalty</span>,
         cell: (props) => {
-          if (props.row.original.week1.w1_isOptional) {
+          if (props.row.original.w1_isOptional) {
             return 0
           } else {
             return formatNumber(
               PENALTY_CW_POINTS_BY_KEY *
-                (HYDRA_KEY - props.row.original.week1.w1_keyUsed),
+                (HYDRA_KEY - props.row.original.w1_keyUsed),
               0,
             )
           }
@@ -622,8 +529,8 @@ const defaultColumns: ColumnDef<ITable>[] = [
         accessorKey: 'w2_keyUsed',
         header: () => <span>Key Used</span>,
         cell: (props) => {
-          if (props.row.original.week2.w2_isOptional) {
-            switch (props.row.original.week2.w2_keyUsed) {
+          if (props.row.original.w2_isOptional) {
+            switch (props.row.original.w2_keyUsed) {
               case 0:
                 return '❌❌❌'
               case 1:
@@ -637,7 +544,7 @@ const defaultColumns: ColumnDef<ITable>[] = [
             }
           }
 
-          switch (props.row.original.week2.w2_keyUsed) {
+          switch (props.row.original.w2_keyUsed) {
             case 0:
               return '⭕️⭕️⭕️'
             case 1:
@@ -656,7 +563,7 @@ const defaultColumns: ColumnDef<ITable>[] = [
         accessorKey: 'w2_damage',
         header: () => <span>Damage</span>,
         cell: (props) => {
-          return formatNumber(props.row.original.week2.w2_damage, 2)
+          return formatNumber(props.row.original.w2_damage, 2)
         },
         footer: (props) => props.column.id,
       },
@@ -664,12 +571,12 @@ const defaultColumns: ColumnDef<ITable>[] = [
         accessorKey: 'w2_penalty',
         header: () => <span>Penalty</span>,
         cell: (props) => {
-          if (props.row.original.week2.w2_isOptional) {
+          if (props.row.original.w2_isOptional) {
             return 0
           } else {
             return formatNumber(
               PENALTY_CW_POINTS_BY_KEY *
-                (HYDRA_KEY - props.row.original.week2.w2_keyUsed),
+                (HYDRA_KEY - props.row.original.w2_keyUsed),
               0,
             )
           }
@@ -685,12 +592,13 @@ const defaultColumns: ColumnDef<ITable>[] = [
       const penaltyByWeek = (keyUsed: number, isOption: boolean | null) => {
         return isOption ? 0 : PENALTY_CW_POINTS_BY_KEY * (HYDRA_KEY - keyUsed)
       }
-      const { week1, week2 } = props.row.original
+      const { w1_keyUsed, w1_isOptional, w2_keyUsed, w2_isOptional } =
+        props.row.original
 
       return formatNumber(
         MIN_POINT[CLAN_WAR_TYPE] +
-          penaltyByWeek(week1.w1_keyUsed, week1.w1_isOptional) +
-          penaltyByWeek(week2.w2_keyUsed, week2.w2_isOptional),
+          penaltyByWeek(w1_keyUsed, w1_isOptional) +
+          penaltyByWeek(w2_keyUsed, w2_isOptional),
         0,
       )
     },
@@ -709,6 +617,8 @@ export const HydraPage = ({ className, ...rest }: IHydraPageProps) => {
 
   const [columns] = useState<typeof defaultColumns>(() => [...defaultColumns])
   const [sorting, setSorting] = useState<SortingState>([])
+
+  console.log('sorting: ', sorting)
   const [pagination, setPagination] = useState<PaginationState>({
     pageIndex: 0,
     pageSize: 10,
