@@ -19,6 +19,8 @@ import {
 } from '@tanstack/react-table'
 import { formatNumber } from '@/utils'
 
+console.log(WebApp)
+
 export enum EClanWarType {
   default = 'default',
   personal = 'personal',
@@ -30,6 +32,7 @@ export const MIN_POINT = {
 }
 
 export const HYDRA_KEY = 3
+export const CLAN_WAR_TYPE = EClanWarType.personal
 
 export const PENALTY_CW_POINTS_BY_KEY = Math.round(
   ((MIN_POINT[EClanWarType.personal] / 2) * (100 / HYDRA_KEY)) / 100,
@@ -39,226 +42,450 @@ const jsonData: Omit<ITable, 'index'>[] = [
   {
     tgAlias: 'Boichun',
     nickname: 'DreadnoughtUA',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 1744546469,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 1744546469,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: '@Ifvien',
     nickname: 'lfvien',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 1644757886,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 1644757886,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Паша',
     nickname: 'PashaTKO',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 1536258421,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 1536258421,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'al glass',
     nickname: 'Crystal Castle',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 1530479225,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 1530479225,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Анатолій',
     nickname: 'Radoran',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 1152184621,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 1152184621,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Мирослав',
     nickname: 'МирославUA',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 1041638903,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 1041638903,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Виталик Бакс',
     nickname: 'Baks23',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 697591793,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 697591793,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: '@mbIk0lo',
     nickname: 'mbIk0lo',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 447312145,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 447312145,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Богдан',
     nickname: 'DrumBall',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 393976131,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 393976131,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: '@belkins_22',
     nickname: 'Belkins_22',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 391959491,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 391959491,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Андрій',
     nickname: 'Крегул',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 280941704,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 280941704,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: '@Tambourin',
     nickname: 'Tambourin',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 226600000,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 226600000,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Ksondr',
     nickname: 'Ksondr',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 221481553,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 221481553,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Roman',
     nickname: 'NikROman',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 184324369,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 184324369,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Oleg',
     nickname: 'Oleg77713',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 183760000,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 183760000,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Міша',
     nickname: 'Бітанга',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 172700000,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 172700000,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Ihor',
     nickname: 'Rigel_beta',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 154764901,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 154764901,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Влад',
     nickname: 'VLAD_XIII',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 147223134,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 147223134,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Kiyasik',
     nickname: 'Кіясік',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 143090000,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 143090000,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Oleksandr',
     nickname: 'BEDbMAK_777',
-    isOptional: null,
-    keyUsed: 2,
-    damage: 136175610,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 2,
+      w1_damage: 136175610,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: '@ArtemSolokha',
     nickname: 'ArtemDE',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 121050000,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 121050000,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'юра',
     nickname: 'Юрец',
-    isOptional: null,
-    keyUsed: 2,
-    damage: 76730000,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 2,
+      w1_damage: 76730000,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Oleksandr',
     nickname: 'Eriddicus',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 72370000,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 72370000,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: '@Vander7',
     nickname: 'Vander7',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 53330000,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 53330000,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: '@Mikaela_pak',
     nickname: 'dei.m',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 47150000,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 47150000,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'kanndai',
     nickname: 'kanndai',
-    isOptional: null,
-    keyUsed: 3,
-    damage: 17890000,
-    penalty: 0,
+    week1: {
+      w1_isOptional: null,
+      w1_keyUsed: 3,
+      w1_damage: 17890000,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: 'Просто в Кайф',
     nickname: 'Просто в Кайф',
-    isOptional: true,
-    keyUsed: 0,
-    damage: 0,
-    penalty: 0,
+    week1: {
+      w1_isOptional: true,
+      w1_keyUsed: 0,
+      w1_damage: 0,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
   {
     tgAlias: '',
     nickname: 'AleKsBeN',
-    isOptional: true,
-    keyUsed: 0,
-    damage: 0,
-    penalty: 0,
+    week1: {
+      w1_isOptional: true,
+      w1_keyUsed: 0,
+      w1_damage: 0,
+      w1_penalty: 0,
+    },
+    week2: {
+      w2_isOptional: null,
+      w2_keyUsed: 0,
+      w2_damage: 0,
+      w2_penalty: 0,
+    },
   },
 ]
 
@@ -266,10 +493,18 @@ interface ITable {
   index: number
   tgAlias: string
   nickname: string
-  isOptional: boolean | null
-  keyUsed: number
-  damage: number
-  penalty: number
+  week1: {
+    w1_isOptional: boolean | null
+    w1_keyUsed: number
+    w1_damage: number
+    w1_penalty: number
+  }
+  week2: {
+    w2_isOptional: boolean | null
+    w2_keyUsed: number
+    w2_damage: number
+    w2_penalty: number
+  }
 }
 
 const defaultColumns: ColumnDef<ITable>[] = [
@@ -304,20 +539,21 @@ const defaultColumns: ColumnDef<ITable>[] = [
     ],
   },
   {
-    header: 'Cycle Info',
+    header: 'Week 1',
     footer: (props) => props.column.id,
     columns: [
       {
-        accessorKey: 'isOptional',
+        accessorKey: 'w1_isOptional',
+        id: 'w1_isOptional',
         header: () => <span>Optional</span>,
         footer: (props) => props.column.id,
       },
       {
-        accessorKey: 'keyUsed',
+        accessorKey: 'w1_keyUsed',
         header: () => <span>Key Used</span>,
         cell: (props) => {
-          if (props.row.original.isOptional) {
-            switch (props.getValue()) {
+          if (props.row.original.week1.w1_isOptional) {
+            switch (props.row.original.week1.w1_keyUsed) {
               case 0:
                 return '❌❌❌'
               case 1:
@@ -331,7 +567,7 @@ const defaultColumns: ColumnDef<ITable>[] = [
             }
           }
 
-          switch (props.getValue()) {
+          switch (props.row.original.week1.w1_keyUsed) {
             case 0:
               return '⭕️⭕️⭕️'
             case 1:
@@ -347,23 +583,23 @@ const defaultColumns: ColumnDef<ITable>[] = [
         footer: (props) => props.column.id,
       },
       {
-        accessorKey: 'damage',
+        accessorKey: 'w1_damage',
         header: () => <span>Damage</span>,
         cell: (props) => {
-          return formatNumber(props.getValue(), 2)
+          return formatNumber(props.row.original.week1.w1_damage, 2)
         },
         footer: (props) => props.column.id,
       },
       {
-        accessorKey: 'penalty',
+        accessorKey: 'w1_penalty',
         header: () => <span>Penalty</span>,
         cell: (props) => {
-          if (props.row.original.isOptional) {
+          if (props.row.original.week1.w1_isOptional) {
             return 0
           } else {
             return formatNumber(
               PENALTY_CW_POINTS_BY_KEY *
-                (HYDRA_KEY - props.row.original.keyUsed),
+                (HYDRA_KEY - props.row.original.week1.w1_keyUsed),
               0,
             )
           }
@@ -371,6 +607,93 @@ const defaultColumns: ColumnDef<ITable>[] = [
         footer: (props) => props.column.id,
       },
     ],
+  },
+  {
+    header: 'Week 2',
+    footer: (props) => props.column.id,
+    columns: [
+      {
+        id: 'w2_isOptional',
+        accessorKey: 'w2_isOptional',
+        header: () => <span>Optional</span>,
+        footer: (props) => props.column.id,
+      },
+      {
+        accessorKey: 'w2_keyUsed',
+        header: () => <span>Key Used</span>,
+        cell: (props) => {
+          if (props.row.original.week2.w2_isOptional) {
+            switch (props.row.original.week2.w2_keyUsed) {
+              case 0:
+                return '❌❌❌'
+              case 1:
+                return '✅❌❌'
+              case 2:
+                return '✅✅❌'
+              case 3:
+                return '✅✅✅'
+              default:
+                return '❌❌❌'
+            }
+          }
+
+          switch (props.row.original.week2.w2_keyUsed) {
+            case 0:
+              return '⭕️⭕️⭕️'
+            case 1:
+              return '✅⭕️⭕️'
+            case 2:
+              return '✅✅⭕️'
+            case 3:
+              return '✅✅✅'
+            default:
+              return '❌❌❌'
+          }
+        },
+        footer: (props) => props.column.id,
+      },
+      {
+        accessorKey: 'w2_damage',
+        header: () => <span>Damage</span>,
+        cell: (props) => {
+          return formatNumber(props.row.original.week2.w2_damage, 2)
+        },
+        footer: (props) => props.column.id,
+      },
+      {
+        accessorKey: 'w2_penalty',
+        header: () => <span>Penalty</span>,
+        cell: (props) => {
+          if (props.row.original.week2.w2_isOptional) {
+            return 0
+          } else {
+            return formatNumber(
+              PENALTY_CW_POINTS_BY_KEY *
+                (HYDRA_KEY - props.row.original.week2.w2_keyUsed),
+              0,
+            )
+          }
+        },
+        footer: (props) => props.column.id,
+      },
+    ],
+  },
+  {
+    header: 'Clan Wars Points',
+    footer: (props) => props.column.id,
+    cell: (props) => {
+      const penaltyByWeek = (keyUsed: number, isOption: boolean | null) => {
+        return isOption ? 0 : PENALTY_CW_POINTS_BY_KEY * (HYDRA_KEY - keyUsed)
+      }
+      const { week1, week2 } = props.row.original
+
+      return formatNumber(
+        MIN_POINT[CLAN_WAR_TYPE] +
+          penaltyByWeek(week1.w1_keyUsed, week1.w1_isOptional) +
+          penaltyByWeek(week2.w2_keyUsed, week2.w2_isOptional),
+        0,
+      )
+    },
   },
 ]
 
@@ -392,7 +715,8 @@ export const HydraPage = ({ className, ...rest }: IHydraPageProps) => {
   })
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
     tgAlias: false,
-    isOptional: false,
+    w1_isOptional: false,
+    w2_isOptional: false,
     keyUsed: true,
     damage: true,
     penalty: true,
@@ -429,7 +753,7 @@ export const HydraPage = ({ className, ...rest }: IHydraPageProps) => {
           <Typography tag={'h3'} className={styles.Title}>
             Hydra
             <span>05.06-19.06</span>
-            <span>Week 1 / 2</span>
+            <span>Week 2 / 2</span>
           </Typography>
 
           {table
@@ -586,8 +910,6 @@ export const HydraPage = ({ className, ...rest }: IHydraPageProps) => {
           >
             Show Alert
           </button>
-          {/* <TableComponent data={data} columns={columns} /> */}
-          {/* <MDRender markdown={markdown} /> */}
         </div>
       </section>
     </div>
