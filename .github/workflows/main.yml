@@ -36,7 +36,7 @@ jobs:
         run: npm install -g yarn
       
       - name: 🗂️ Install dependencies
-        run: yarn i
+        run: yarn
 
       - name: Version patch
         run: yarn vesion 0.1.$GITHUB_RUN_ID
