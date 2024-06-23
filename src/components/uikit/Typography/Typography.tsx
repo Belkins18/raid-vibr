@@ -3,6 +3,7 @@ import classNames from 'classnames'
 
 import styles from './Typography.module.scss'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export enum ETypographyVariant {
   h1 = 'h1',
   h2 = 'h2',

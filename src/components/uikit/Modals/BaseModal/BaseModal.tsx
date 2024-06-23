@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ETypographyVariant, Typography } from '@/components/uikit'
 import styles from './BaseModal.module.scss'
 import { ReactNode } from 'react'

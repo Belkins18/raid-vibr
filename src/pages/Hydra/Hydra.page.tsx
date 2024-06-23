@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable react-refresh/only-export-components */
 import { HTMLAttributes, useState } from 'react'
 import WebApp from '@twa-dev/sdk'
 import classNames from 'classnames'
