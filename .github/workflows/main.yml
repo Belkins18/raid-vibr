@@ -39,7 +39,7 @@ jobs:
         run: yarn
 
       - name: Version patch
-        run: yarn vesion 0.1.$GITHUB_RUN_ID
+        run: yarn version --new-version 0.1.$GITHUB_RUN_ID
         
       - name: 🗂️ Format code
         run: yarn format
