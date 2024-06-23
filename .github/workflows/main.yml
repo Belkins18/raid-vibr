@@ -1,0 +1,57 @@
+name: Node.js CI
+
+on:
+  push:
+    # Run on all branches
+    branches:
+      - "master"
+    # Run only if files modified are not docs
+    paths-ignore:
+      - "*.md"
+  pull_request:
+    # Run on all branches
+    branches:
+      - "master"
+    # Run only if files modified are not docs
+    paths-ignore:
+      - "*.md"
+   
+jobs:
+  buildAndTest:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: 💿 Install node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Edit Config
+        run: git config --global user.name "Belkins18" && git config --global user.email "nikolay.belibov@gmail.com"
+  
+      - name: 🏗 Setup yarn
+        run: npm install -g yarn
+      
+      - name: 🗂️ Install dependencies
+        run: yarn i
+
+      - name: Version patch
+        run: yarn vesion 0.1.$GITHUB_RUN_ID
+        
+      - name: 🗂️ Format code
+        run: yarn format
+        
+      - name: 🗂️ Check Lint
+        run: yarn lint
+
+      - name: 📧 Telegramm notification
+        uses: appleboy/telegram-action@master
+        with: 
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token:  ${{ secrets.TELEGRAM_TOKEN }}
+          args: "New 0.1.${{ github.run_id }} version publish"
+
+    
