@@ -22,4 +22,10 @@
       image-set('/src/assets/images/hydra/bg.jpg' type('image/jpg')) no-repeat
       top center / cover;
   }
+  &:global(.isCW) {
+    background: fixed
+      image-set('/src/assets/images/clanWars/bg.webp' type('image/webp')) no-repeat
+      top center / cover;
+  }
+
 }
