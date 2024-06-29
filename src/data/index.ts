@@ -1,3 +1,11 @@
+import { normaliseData } from '@/data/utils'
+import {
+  EHydraTournamentStatus,
+  IHydraInfo,
+  IHydraUserStats,
+} from '@/data/types'
+import hydraDataJson from './hydra_05-06-24_19-06-24.json'
+
 export enum ESocialName {
   twitter = 'x',
   telegram = 'telegram',
@@ -29,55 +37,6 @@ export const SocialList = [
   //   viewBox: '0 0 44 29'
   // },
 ]
-import { formatNumber } from '@/utils'
-import hydraDataJson from './hydra_05-06-24_19-06-24.json'
-
-export interface IHydraUserStats {
-  tgAlias: string
-  nickname: string
-  w1_isOptional: boolean | null | 'ИСТИНА'
-  w1_keyUsed: number
-  w1_damage: number | string
-  w1_penalty: number
-  w2_isOptional: boolean | null | 'ИСТИНА'
-  w2_keyUsed: number
-  w2_damage: number | string
-  w2_penalty: number
-}
-
-export interface IHydraDate {
-  day: number | string
-  month: number | string
-  year: number | string
-}
-export interface IHydraInfo {
-  name: string
-  period: {
-    start: IHydraDate
-    end: IHydraDate
-  }
-  data: IHydraUserStats[]
-}
-
-const normaliseData = (data: IHydraUserStats[]) => {
-  return data.map((item) => {
-    const stringToNumber = (input: string): number => {
-      return typeof input === 'string'
-        ? parseInt(input.replace(/\s/g, ''), 10)
-        : input
-    }
-    return {
-      ...item,
-      w1_damage: stringToNumber(item.w1_damage as string),
-      w2_damage: stringToNumber(item.w2_damage as string),
-      w1_isOptional: item.w1_isOptional === 'ИСТИНА',
-      w2_isOptional: item.w2_isOptional === 'ИСТИНА',
-    }
-  })
-}
-
-console.log(normaliseData(hydraDataJson.data as IHydraUserStats[]))
-console.log(formatNumber(1152184621, 2))
 
 const data = {
   name: hydraDataJson.name,
@@ -86,3 +45,22 @@ const data = {
 } as IHydraInfo
 
 export const { name: tableName, period: tablePeriod, data: tableData } = data
+
+export const hydraTournamentsKeys = [
+  {
+    id: '05.06.24-19.06.24',
+    state: EHydraTournamentStatus.isEnded,
+  },
+  {
+    id: '19.06.24-03.07.24',
+    state: EHydraTournamentStatus.isActive,
+  },
+  {
+    id: '03.07.24-17.07.24',
+    state: EHydraTournamentStatus.isNotActive,
+  },
+  {
+    id: '17.07.24-31.07.24',
+    state: EHydraTournamentStatus.isNotActive,
+  },
+]

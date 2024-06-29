@@ -74,6 +74,7 @@ export const RaidLayout = () => {
       (audio && audio) ||
       (document.getElementById('audioPlayer') as HTMLAudioElement)
 
+    audioElement.volume = 0.2
     await audioElement.pause()
   }
 
@@ -100,6 +101,8 @@ export const RaidLayout = () => {
           className={styles.Header}
           params={params}
           navList={navList}
+          onPlay={onPlayHandler}
+          onPause={onPauseHandler}
           brand={
             <Brand
               img={{ name: 'logo', path: 'raid/logo', ext: EPictureExt.png }}
