@@ -7,10 +7,10 @@ import i18n, { EDirection, ELangSupport } from '@/i18n'
 import { MenuProvider } from '@/providers/MenuProvider'
 
 import { LandingHeader } from '@/components/sections'
-import { Brand, EPictureExt } from '@/components/smart'
+import { AudioPlayer, Brand, EPictureExt } from '@/components/smart'
 
 import styles from './Raid.layout.module.scss'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const query = {
   isMobile: {
@@ -31,6 +31,7 @@ const query = {
 
 export const RaidLayout = () => {
   const isHydra = useMatch('/hydra')
+  const isCW = useMatch('/clan-wars')
 
   const { t: tNavigate } = useTranslation('translation', {
     keyPrefix: 'raid',
@@ -52,11 +53,47 @@ export const RaidLayout = () => {
       i18n.language === ELangSupport.ar ? EDirection.rtl : EDirection.ltr
   }, [])
 
+  const [context] = useState(new AudioContext())
+
+  const onPlayHandler = async (audio?: HTMLAudioElement) => {
+    await context.resume()
+
+    const audioElement =
+      (audio && audio) ||
+      (document.getElementById('audioPlayer') as HTMLAudioElement)
+
+    audioElement.volume = 0.2
+    audioElement.muted = false
+    await audioElement.play()
+  }
+
+  const onPauseHandler = async (audio?: HTMLAudioElement) => {
+    await context.suspend()
+
+    const audioElement =
+      (audio && audio) ||
+      (document.getElementById('audioPlayer') as HTMLAudioElement)
+
+    audioElement.volume = 0.2
+    await audioElement.pause()
+  }
+
   return (
     <MenuProvider>
+      <AudioPlayer
+        src={[
+          `${new URL('/src/assets/audio/music.mp3', import.meta.url).href}`,
+          `${new URL('/src/assets/audio/CosmicJourneyTheme.mp3', import.meta.url).href}`,
+        ]}
+        context={context}
+        onPlay={onPlayHandler}
+        onPause={onPauseHandler}
+      />
+
       <div
         className={classNames(styles.RaidContainer, params, {
           isHydra: isHydra,
+          isCW: isCW,
         })}
         ref={containerRef}
       >
@@ -64,6 +101,8 @@ export const RaidLayout = () => {
           className={styles.Header}
           params={params}
           navList={navList}
+          onPlay={onPlayHandler}
+          onPause={onPauseHandler}
           brand={
             <Brand
               img={{ name: 'logo', path: 'raid/logo', ext: EPictureExt.png }}

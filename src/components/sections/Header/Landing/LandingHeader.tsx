@@ -1,4 +1,11 @@
-import { HTMLAttributes, ReactNode, useEffect, useState } from 'react'
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import {
+  HTMLAttributes,
+  ReactNode,
+  useCallback,
+  useEffect,
+  useState,
+} from 'react'
 import classNames from 'classnames'
 
 import { Brand, EPictureExt, Navigate } from '@/components/smart'
@@ -15,6 +22,8 @@ interface ILandingHeaderProps extends HTMLAttributes<HTMLElement> {
     link?: string
   }[]
   brand?: ReactNode
+  onPlay: () => any
+  onPause: () => any
 }
 
 export const LandingHeader = ({
@@ -22,6 +31,8 @@ export const LandingHeader = ({
   params,
   navList,
   brand,
+  onPlay,
+  onPause,
   ...rest
 }: ILandingHeaderProps) => {
   const [scrollPosition, setScrollPosition] = useState<number>(0)
@@ -30,6 +41,14 @@ export const LandingHeader = ({
     const position = window.pageYOffset
     setScrollPosition(position)
   }
+
+  const onPlayHandler = useCallback(() => {
+    onPlay && onPlay()
+  }, [onPlay])
+
+  const onPauseHandler = useCallback(() => {
+    onPause && onPause()
+  }, [onPause])
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
@@ -47,7 +66,11 @@ export const LandingHeader = ({
       {...{ ...rest }}
     >
       <div className={classNames('container', styles.Header__container)}>
-        {brand ? brand : <Brand />}
+        <div className={styles.LeftZone}>
+          {brand ? brand : <Brand />}
+          <button onClick={onPlayHandler}>play</button>
+          <button onClick={onPauseHandler}>stop</button>
+        </div>
         {params.isDesktop && <Navigate navList={navList} hasMute={false} />}
 
         {!params.isDesktop && <HamburgerButton />}

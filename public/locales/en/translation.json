@@ -73,6 +73,10 @@
 			{
 				"title": "Hydra",
 				"link": "hydra"
+			},
+			{
+				"title": "Clan Wars",
+				"link": "clan-wars"
 			}
 		],
 		"components": {

@@ -1,38 +1,28 @@
 @import '@/assets/styles/mixins';
 
 .HydraPage {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    min-height: 100vh;
-    background-color: rgba(var(--color-black-rgb), 0.8);
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(var(--color-black-rgb), 0.8);
 
-    .Title {
-        span {
-            display: block;
-            font-size: rem(24);
-        }
-
-        ~ .List {
-            margin-block-start: rem(32);
-        }
+  .Title {
+    span {
+      display: block;
+      font-size: rem(24);
     }
 
-
-
-    
-.TableContainer {
-    overflow-x: auto;
-    // width: 100%;
-    // // max-width: 960px;
-    position: relative;
+    ~ .List {
+      margin-block-start: rem(32);
+    }
   }
-  
+
   table {
     border-collapse: separate !important;
     border-spacing: 0;
   }
-  
+
   th {
     font-weight: bold;
     height: 30px;
@@ -40,17 +30,16 @@
     position: relative;
     text-align: center;
   }
-  
+
   td {
     padding: 2px 4px;
     text-align: center;
 
     &:global(.alignInitial) {
-        text-align: initial;
-
+      text-align: initial;
     }
   }
-  
+
   .resizer {
     background: rgba(0, 0, 0, 0.5);
     cursor: col-resize;
@@ -62,10 +51,9 @@
     user-select: none;
     width: 5px;
   }
-  
+
   .resizer.isResizing {
     background: blue;
     opacity: 1;
   }
-  
 }

@@ -37,21 +37,32 @@ jobs:
       
       - name: 🗂️ Install dependencies
         run: yarn
-
-      - name: Version patch
-        run: yarn version --new-version 0.1.$GITHUB_RUN_ID
         
       - name: 🗂️ Format code
         run: yarn format
         
       - name: 🗂️ Check Lint
-        run: yarn lint
+        run: yarn lint --fix
+
+      - name: Version patch
+        run: yarn version --patch
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: dist/
 
       - name: 📧 Telegramm notification
         uses: appleboy/telegram-action@master
         with: 
           to: ${{ secrets.TELEGRAM_CHAT_ID }}
           token:  ${{ secrets.TELEGRAM_TOKEN }}
-          args: "New 0.1.${{ github.run_id }} version publish"
+          args: |
+            ${{ github.actor }} created commit:
+            Commit message: ${{ github.event.commits[0].message }}
+            
+            Repository: ${{ github.repository }}
+            
+            See changes: https://github.com/${{ github.repository }}/commit/${{github.sha}}
 
     

@@ -1,5 +1,6 @@
 export { HomePage } from './Home'
 export { HydraPage } from './Hydra'
+export { ClanWarsPage } from './ClanWars'
 export { LoginPage } from './Login'
 export { NotFoundPage } from './NotFound'
 export { RegisterPage } from './Register'

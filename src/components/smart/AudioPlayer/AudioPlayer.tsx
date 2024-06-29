@@ -21,7 +21,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   }, [context, onPause])
 
   const onResumeContext = useCallback(async () => {
-    onPlay && (await onPlay(refAudio.current! as HTMLAudioElement))
+    onPlay && (await onPlay(refAudio.current!))
   }, [context, onPlay])
 
   useEffect(() => {
@@ -30,6 +30,8 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
     } else {
       onPause(refAudio.current! as HTMLAudioElement)
     }
+
+    refAudio.current && (refAudio.current as HTMLMediaElement).volume
   }, [context])
 
   return (

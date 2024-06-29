@@ -1,0 +1,21 @@
+@import '@/assets/styles/mixins';
+
+.ClanWarsPage {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(var(--color-black-rgb), 0.8);
+
+    .Title {
+        span {
+            display: block;
+            font-size: rem(24);
+        }
+
+        ~ .List {
+            margin-block-start: rem(32);
+        }
+    }
+
+}
