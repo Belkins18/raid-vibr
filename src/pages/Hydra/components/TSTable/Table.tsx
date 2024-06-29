@@ -4,7 +4,7 @@ import classNames from 'classnames'
 
 import { TTable } from '../../variables'
 
-interface IHydraTableProps extends HTMLAttributes<HTMLDivElement> {
+interface IHydraTableProps extends HTMLAttributes<HTMLTableElement> {
   table: import('@tanstack/table-core').Table<TTable>
 }
 

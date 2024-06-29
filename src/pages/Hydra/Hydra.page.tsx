@@ -1,114 +1,120 @@
- 
-import { HTMLAttributes, useState } from 'react'
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+import { HTMLAttributes, Suspense, lazy, useState } from 'react'
+import { useQuery } from '@tanstack/react-query'
 import WebApp from '@twa-dev/sdk'
 import classNames from 'classnames'
 
-import { Typography } from '@/components/uikit'
+import { Loader, Typography } from '@/components/uikit'
 
 import styles from './Hydra.page.module.scss'
+
+import { Tab, Tabs, TabList } from 'react-tabs'
+import 'react-tabs/style/react-tabs.scss'
+const Table = lazy(() => import('./components/TSTable'))
+
+import { hydraTournamentsKeys } from '@/data'
 import {
-  PaginationState,
-  SortingState,
-  VisibilityState,
-  getCoreRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  useReactTable,
-} from '@tanstack/react-table'
-
-import { Table, TablePagination, defaultColumns } from './components'
-// const Table = lazy(() => import('./components/TSTable/Table'))
-
-import { TTable } from './variables'
-import { tableName, tableData } from '@/data'
+  EHydraTournamentStatus,
+  IHydraInfo,
+  IHydraUserStats,
+} from '@/data/types'
+import { normaliseData } from '@/data/utils'
 
 console.log(WebApp)
+
+const getData = async (route: string) => {
+  const response = await fetch(
+    `${import.meta.env.VITE_APP_BIN_ROOT}/b/${route}`,
+    {
+      headers: {
+        'X-Master-Key': `${import.meta.env.VITE_APP_BIN_MASTER_KEY}`,
+      },
+    },
+  )
+  return (await response.json()) as {
+    record: IHydraInfo
+  }
+}
 
 interface IHydraPageProps extends HTMLAttributes<HTMLDivElement> {}
 
 export const HydraPage = ({ className, ...rest }: IHydraPageProps) => {
-  const [data] = useState<TTable[]>(
-    Array(tableData.length)
-      .fill({})
-      .map((_, index) => ({ index: index + 1 }))
-      .map((item, i) => ({ ...item, ...tableData[i] })),
-  )
+  const [tabIndex, setTabIndex] = useState(0)
 
-  const [columns] = useState<typeof defaultColumns>(() => [...defaultColumns])
-  const [sorting, setSorting] = useState<SortingState>([])
+  const { data, isLoading } = useQuery({
+    queryKey: [''],
+    queryFn: () => getData(import.meta.env.VITE_APP_BIN_ROUTE_HYDRA_ID),
+    select: (selectData) => {
+      // @ts-ignore
+      const _data = selectData.record[hydraTournamentsKeys[tabIndex].id]
+      Object.assign(_data, {
+        ..._data,
+        data: normaliseData(_data.data as IHydraUserStats[]),
+      })
+      Object.assign(selectData.record, {
+        ...selectData.record,
+      })
+      console.log(selectData)
 
-  const [pagination, setPagination] = useState<PaginationState>({
-    pageIndex: 0,
-    pageSize: 10,
-  })
-  const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({
-    tgAlias: false,
-    w1_isOptional: false,
-    w2_isOptional: false,
-    keyUsed: true,
-    damage: true,
-    penalty: true,
-  })
-
-  const table = useReactTable({
-    data,
-    columns,
-    defaultColumn: {
-      size: 80, //starting column size
-      minSize: 20, //enforced during column resizing
-      maxSize: 500, //enforced during column resizing
+      return selectData.record
     },
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-    onPaginationChange: setPagination,
-    onColumnVisibilityChange: setColumnVisibility,
-    getSortedRowModel: getSortedRowModel(), //client-side sorting
-    onSortingChange: setSorting,
-    state: {
-      columnVisibility,
-      pagination,
-      sorting,
-    },
-    debugTable: true,
-    debugHeaders: true,
-    debugColumns: true,
   })
 
   return (
     <div className={classNames(styles.HydraPage, className)} {...{ ...rest }}>
       <section>
         <div className="container">
-          <Typography tag={'h3'} className={styles.Title}>
-            Hydra
-            <span>{tableName}</span>
-          </Typography>
+          <Suspense
+            fallback={
+              <div className="main-loader">
+                <Loader width={'100'} />
+              </div>
+            }
+          >
+            <Typography tag={'h3'} className={styles.Title}>
+              Hydra
+              <span>{hydraTournamentsKeys[tabIndex].id}</span>
+            </Typography>
+            <Tabs
+              selectedIndex={tabIndex}
+              onSelect={(index) => setTabIndex(index)}
+            >
+              <TabList>
+                {hydraTournamentsKeys.map((item, index) => {
+                  return (
+                    <Tab
+                      key={index}
+                      disabled={
+                        item.state === EHydraTournamentStatus.isNotActive
+                      }
+                    >
+                      {item.id}
+                    </Tab>
+                  )
+                })}
+              </TabList>
+            </Tabs>
 
-          {table
-            .getAllLeafColumns()
-            .filter((item) => item.id !== 'index')
-            .filter((item) => item.id !== 'nickname')
-            .map((column) => {
-              return (
-                <div key={column.id} className="px-1">
-                  <label>
-                    <input
-                      {...{
-                        type: 'checkbox',
-                        checked: column.getIsVisible(),
-                        onChange: column.getToggleVisibilityHandler(),
-                      }}
-                    />{' '}
-                    {column.id}
-                  </label>
-                </div>
-              )
-            })}
-
-          <div className={styles.TableContainer}>
-            <Table table={table} />
-          </div>
-
-          <TablePagination table={table} />
+            {isLoading ? (
+              <div className="main-loader">
+                <Loader width={'100'} />
+              </div>
+            ) : Object.prototype.hasOwnProperty.call(
+                data,
+                hydraTournamentsKeys[tabIndex].id,
+              ) ? (
+              <>
+                <Table
+                  tableData={
+                    // @ts-ignore
+                    data[hydraTournamentsKeys[tabIndex].id].data
+                  }
+                />
+              </>
+            ) : (
+              <>Data not found!</>
+            )}
+          </Suspense>
 
           {/* <button
             onClick={() => WebApp.showAlert(`Hello World! Current count is`)}

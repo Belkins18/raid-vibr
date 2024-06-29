@@ -352,3 +352,8 @@ table {
     margin-left: 5px;
   }
 }
+
+.react-tabs__tab.react-tabs__tab--selected {
+  background-color: initial;
+  color: inherit;
+}

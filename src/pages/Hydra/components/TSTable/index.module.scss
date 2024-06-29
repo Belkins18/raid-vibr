@@ -1,0 +1,8 @@
+@import '@/assets/styles/mixins';
+
+.TableContainer {
+  overflow-x: auto;
+  // width: 100%;
+  // // max-width: 960px;
+  position: relative;
+}
