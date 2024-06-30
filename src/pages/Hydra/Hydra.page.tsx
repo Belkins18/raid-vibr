@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import { HTMLAttributes, Suspense, lazy, useState } from 'react'
+import { HTMLAttributes, Suspense, lazy, useCallback, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import WebApp from '@twa-dev/sdk'
 import classNames from 'classnames'
@@ -60,10 +60,43 @@ export const HydraPage = ({ className, ...rest }: IHydraPageProps) => {
     },
   })
 
+  const tableUpdate = useCallback(() => {
+    return (
+      <Table
+        tableData={
+          // @ts-ignore
+          data[hydraTournamentsKeys[tabIndex].id].data
+        }
+      />
+    )
+  }, [data, tabIndex])
+
   return (
     <div className={classNames(styles.HydraPage, className)} {...{ ...rest }}>
       <section>
         <div className="container">
+          <Typography tag={'h3'} className={styles.Title}>
+            Hydra
+            <span>{hydraTournamentsKeys[tabIndex].id}</span>
+          </Typography>
+          <Tabs
+            selectedIndex={tabIndex}
+            onSelect={(index) => setTabIndex(index)}
+          >
+            <TabList>
+              {hydraTournamentsKeys.map((item, index) => {
+                return (
+                  <Tab
+                    key={index}
+                    disabled={item.state === EHydraTournamentStatus.isNotActive}
+                  >
+                    {item.id}
+                  </Tab>
+                )
+              })}
+            </TabList>
+          </Tabs>
+
           <Suspense
             fallback={
               <div className="main-loader">
@@ -71,30 +104,6 @@ export const HydraPage = ({ className, ...rest }: IHydraPageProps) => {
               </div>
             }
           >
-            <Typography tag={'h3'} className={styles.Title}>
-              Hydra
-              <span>{hydraTournamentsKeys[tabIndex].id}</span>
-            </Typography>
-            <Tabs
-              selectedIndex={tabIndex}
-              onSelect={(index) => setTabIndex(index)}
-            >
-              <TabList>
-                {hydraTournamentsKeys.map((item, index) => {
-                  return (
-                    <Tab
-                      key={index}
-                      disabled={
-                        item.state === EHydraTournamentStatus.isNotActive
-                      }
-                    >
-                      {item.id}
-                    </Tab>
-                  )
-                })}
-              </TabList>
-            </Tabs>
-
             {isLoading ? (
               <div className="main-loader">
                 <Loader width={'100'} />
@@ -103,14 +112,7 @@ export const HydraPage = ({ className, ...rest }: IHydraPageProps) => {
                 data,
                 hydraTournamentsKeys[tabIndex].id,
               ) ? (
-              <>
-                <Table
-                  tableData={
-                    // @ts-ignore
-                    data[hydraTournamentsKeys[tabIndex].id].data
-                  }
-                />
-              </>
+              <>{tableUpdate()}</>
             ) : (
               <>Data not found!</>
             )}

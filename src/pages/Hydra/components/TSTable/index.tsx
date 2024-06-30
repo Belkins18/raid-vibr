@@ -1,4 +1,4 @@
-import { HTMLAttributes, useState } from 'react'
+import { HTMLAttributes, useEffect, useState } from 'react'
 import {
   PaginationState,
   SortingState,
@@ -23,12 +23,18 @@ interface ITableComponentProps extends HTMLAttributes<HTMLTableElement> {
 }
 
 const TableComponent = ({ tableData }: ITableComponentProps) => {
-  const [data] = useState<TTable[]>(
-    Array(tableData.length)
-      .fill({})
-      .map((_, index) => ({ index: index + 1 }))
-      .map((item, i) => ({ ...item, ...tableData[i] })),
-  )
+  console.log('tableData: ', tableData)
+
+  const [data, setData] = useState<TTable[]>([])
+
+  useEffect(() => {
+    setData(
+      Array(tableData.length)
+        .fill({})
+        .map((_, index) => ({ index: index + 1 }))
+        .map((item, i) => ({ ...item, ...tableData[i] })),
+    )
+  }, [tableData])
 
   const [columns] = useState<typeof defaultColumns>(() => [...defaultColumns])
   const [sorting, setSorting] = useState<SortingState>([])
